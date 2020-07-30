@@ -16,4 +16,9 @@ public class CardServiceImpl implements CardService{
     public List<Card> findAll() {
         return cardMapper.findAll();
     }
+
+    @Override
+    public Card findById(String cardId) {
+        return cardMapper.findById(cardId);
+    }
 }

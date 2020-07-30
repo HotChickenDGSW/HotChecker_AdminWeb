@@ -2,7 +2,14 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="kr.hs.dgsw.hotchecker.admin.Domain.CardMapper">
     <select id="findAll" resultType="kr.hs.dgsw.hotchecker.admin.Domain.Card">
-            select Idx, grade, class, number, name, student, cardId
+            select studentId, grade, class, number, name, student, cardId
             from card
-     </select>
+    </select>
+
+    <select id="findById" parameterType="String" resultType="kr.hs.dgsw.hotchecker.admin.Domain.Card">
+            select studentId, grade, class, number, name, student, cardId
+            from card
+            where cardId=#{cardId}
+    </select>
+
 </mapper>
